@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/peter987bp/express-gallery#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "pg-hstore": "^2.3.2"
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.4"
   }
 }

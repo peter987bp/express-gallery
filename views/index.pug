@@ -1,0 +1,10 @@
+extends ./layout.pug
+
+include ./mixins.pug
+block title
+  title Pictures
+block body
+  h1#header.headerClass Pictures
+
+
+  img(id='sampleid', class ='input-tag', src=`${pictures.url}`)
