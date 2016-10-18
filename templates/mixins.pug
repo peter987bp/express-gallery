@@ -1,0 +1,9 @@
+mixin pictureList(aPicture)
+  ul.pictures
+    each prop, index in aPicture
+      //-unless index == 'urlTitle'
+      li #{index}:  #{prop}
+
+//- mixin userList(users)
+//-   each user in users
+//-     li#user #{user}

@@ -1,0 +1,45 @@
+extends ./layout.pug
+include ./mixins.pug
+
+block title
+  title Edit-Articles
+
+block body
+  - var isLoggedIn = true
+
+    if routeOf == 'articles'
+      h1#header.headerClass(style={color: '#513894'}) #{headline}
+
+      p#name #{username}
+      form#article(action='/articles/'+title+'/edit' method='post' name='article')
+        fieldset.fieldset
+          legend.legend Article #{id}
+            div
+            label.label
+              span Edit Title:
+              input#title(type= 'text' name='title' value=title)
+            label.label
+              span Edit Author:
+              input#author(type= 'text' name='author' value=author)
+            label.label
+              span Edit Body:
+              input#body(type='textarea' name='body' value=body)
+            input.submit(type='submit' value='Submit')
+    else
+      h1#header.headerClass(style={color: '#513894'}) #{headline}
+
+      p#name #{username}
+      form#product(action='/products/'+id+'/edit' method='post' name='product')
+        fieldset.fieldset
+          legend.legend Product #{id}
+            div
+            label.label
+              span Edit Product name:
+              input#name(type= 'text' name='name' value=name)
+            label.label
+              span Edit Price:
+              input#price(type='text' name='price' value=price)
+            label.label
+              span Edit Inventory:
+              input#inventory(type='number' name='inventory' value=inventory)
+            input.submit(type='submit' value='Submit')
