@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var bp =  require('body-parser');
+const pug = require('pug');
+
 const pictures = require('./routes/pictures.js');
 var db = require('./models');
 
