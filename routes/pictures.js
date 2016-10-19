@@ -49,4 +49,36 @@ app.delete('/:id', function(req, res) {
 
 });
 
+
+app.get('/new', function(req, res) {
+  //Picture.findById(req.params.id)
+  res.render('new', {
+    routeOf,
+    headline: 'Adding a picture to the gallery',
+    userName,
+    author:'',
+    title:'',
+    link:'',
+    description:''
+  }); // eof res.render
+});
+app.post('/new', function (req, res) {
+  //.then((data) => {
+    res.render('new', {
+      routeOf,
+      headline: 'Adding a picture to the gallery',
+      userName,
+      pictures: Picture.create({
+                                author: req.body.author,
+                                link: req.body.link,
+                                description: req.body.description,
+                                title: req.body.title
+                              })
+    }); // eof res.render
+      //res.json(user);
+  //});
+});
+
+
+
 module.exports= app;
