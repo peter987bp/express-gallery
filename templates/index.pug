@@ -14,8 +14,13 @@ block body
       p#name #{userName}
       div#gallery
         ul
-          each val, index in collection
+          each val, index in pictures
+            //- -var urlofpic = #{val.url}
             li #{index} + ': title:' + #{val.title} + 'url: ' + #{val.url}
+            h3 First Pic
+            img(class='picture', src= val.url )
+
+
           //- each val in collection
           //-   +pictureList(val)
           //- else

@@ -11,6 +11,7 @@ app.use(bp.urlencoded({extended : true}));
 var Picture = db.Picture;
 
 app.set('view engine', 'pug');
+app.set('views', './templates');
 
 app.use(express.static('./public'));
 
@@ -24,6 +25,6 @@ app.get('/', function(req,res){
 });
 
 app.listen(8080, function() {
-  console.log('server startd');
+  console.log('server started');
   db.sequelize.sync();
 });
