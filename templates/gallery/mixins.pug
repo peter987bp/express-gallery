@@ -1,0 +1,8 @@
+mixin picturesList(pictures)
+  each picture in pictures
+    div.pictureSet
+      img#sidePicture( src= picture.link)
+      div.sideGalleryInfo
+        div#sideTitle #{picture.title}
+        div#sideLink #{picture.link}
+

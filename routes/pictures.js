@@ -15,12 +15,11 @@ app.get('/', function(req, res) {
     limit: 4
   })
     .then(function (pictures) {
-      res.render('index', {
-        pictures: pictures,
-        routeOf,
-        headline: 'headline',
-        listType: 'listType',
-        userName
+      var mainPicture = pictures.splice(0,1);
+      var sidePictures = pictures;
+      res.render('gallery/index', {
+        mainPicture: mainPicture[0].dataValues,
+        sidePictures: sidePictures
       });
     });
 });
@@ -31,7 +30,6 @@ app.post('/', function (req, res) {
       res.json(user);
     });
 });
-// ------ NEW
 app.get('/new', function(req, res) {
   //Picture.findById(req.params.id)
   res.render('new', {
@@ -45,16 +43,20 @@ app.get('/new', function(req, res) {
   }); // eof res.render
 });
 app.post('/new', function (req, res) {
-  Picture.create({
+  //.then((data) => {
+    res.render('new', {
+      routeOf,
+      headline: 'Adding a picture to the gallery',
+      userName,
+      pictures: Picture.create({
                                 author: req.body.author,
                                 link: req.body.link,
                                 description: req.body.description,
                                 title: req.body.title
                               })
-  .then((data) => {
-    //console.log("data", data.dataValues.id);
-    res.redirect(`/gallery/${data.dataValues.id}`);
-  });
+    }); // eof res.render
+      //res.json(user);
+  //});
 });
 //-------BY ID
 app.get('/:id', function(req,res){
@@ -100,7 +102,6 @@ app.delete('/:id/edit', function(req, res) {
     });
 
 });
-
 
 
 
