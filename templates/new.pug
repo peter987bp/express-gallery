@@ -11,35 +11,20 @@ block body
       h1#header.headerClass(style={color: '#513894'}) #{headline}
 
       p#name #{username}
-      form#picture(action='/picture/new' method='post' name='picture')
+      form#picture(action='/gallery/new' method='post' name='picture')
         fieldset.fieldset
           legend.legend Picture
             div
             label.label
+              span Author:
+              input#title(type= 'text' name='author' value=author)
+            label.label
               span Title:
               input#title(type= 'text' name='title' value=title)
             label.label
-              span Url:
-              input#url(type= 'text' name='author' value=author)
+              span Link:
+              input#link(type= 'text' name='link' value=link)
             label.label
-              span Name:
-              input#name(type='textarea' name='body' value=body)
+              span Description:
+              input#name(type='textarea' name='description' value=description)
             input.submit(type='submit' value='Submit')
-    //- else
-      //- h1#header.headerClass(style={color: '#513894'}) #{headline}
-
-      //- p#name #{username}
-      //- form#product(action='/products/'+id+'/edit' method='post' name='product')
-      //-   fieldset.fieldset
-      //-     legend.legend Product #{id}
-      //-       div
-      //-       label.label
-      //-         span Edit Product name:
-      //-         input#name(type= 'text' name='name' value=name)
-      //-       label.label
-      //-         span Edit Price:
-      //-         input#price(type='text' name='price' value=price)
-      //-       label.label
-      //-         span Edit Inventory:
-      //-         input#inventory(type='number' name='inventory' value=inventory)
-      //-       input.submit(type='submit' value='Submit')
