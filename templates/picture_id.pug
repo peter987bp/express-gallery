@@ -1,0 +1,19 @@
+extends ./layout.pug
+include ./mixins.pug
+
+block title
+  title Photo-Gallery
+
+block body
+  - var isLoggedIn = true
+
+    if routeOf == 'pictures'
+      h1#header.headerClass(style={color: '#513894'}) #{headline}
+
+      h3 #{listType}
+      p#name #{userName}
+      div#gallery
+            li  title:' + #{pictures.title} + 'url: ' + #{pictures.url}
+            h3 First Pic
+            img(class='picture', src= pictures.url )
+            br

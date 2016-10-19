@@ -1,0 +1,41 @@
+extends ./layout.pug
+include ./mixins.pug
+
+block title
+  title Photo-Gallery
+
+block body
+  - var isLoggedIn = true
+
+    if routeOf == 'pictures'
+      h1#header.headerClass(style={color: '#513894'}) #{headline}
+
+      h3 #{listType}
+      p#name #{userName}
+      div#gallery
+            li  title:' + #{pictures.title} + 'url: ' + #{pictures.url}
+            h3 First Pic
+            img(class='picture', src= pictures.url )
+
+  h3#header.headerClass Edit Pictures
+  form(action=`/gallery/${pictures.id}/edit` method='POST' enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="PUT")
+    input(placeholder = 'edit title' name='title')
+    ='\n'
+    input(placeholder = 'edit url' name='url')
+    ='\n'
+    input(placeholder = 'edit rating' name='rating')
+    ='\n'
+    input(type="hidden" name="oldtitle" value=`${pictures.title}`)
+    br
+    button(type='submit' name='put' value='submit') Edit Article
+    br
+
+  h3#header.headerClass Delete Pictures
+  form(action=`/gallery/${pictures.id}/edit` method='POST' enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="DELETE")
+    input(placeholder = 'delete title' name='title')
+    input(type="hidden" name="oldtitle" value=`${pictures.title}`)
+    br
+    button(type='submit' name='put' value='submit') Delete Article
+    br
