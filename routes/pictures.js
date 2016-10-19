@@ -8,6 +8,7 @@ var Picture = db.Picture;
 
 const routeOf = 'pictures';
 const userName = 'userName';
+
 //---HOMEPAGE
 app.get('/', function(req, res) {
   Picture.findAll({
@@ -29,6 +30,31 @@ app.post('/', function (req, res) {
     .then(function (user) {
       res.json(user);
     });
+});
+// ------ NEW
+app.get('/new', function(req, res) {
+  //Picture.findById(req.params.id)
+  res.render('new', {
+    routeOf,
+    headline: 'Adding a picture to the gallery',
+    userName,
+    author:'',
+    title:'',
+    link:'',
+    description:''
+  }); // eof res.render
+});
+app.post('/new', function (req, res) {
+  Picture.create({
+                                author: req.body.author,
+                                link: req.body.link,
+                                description: req.body.description,
+                                title: req.body.title
+                              })
+  .then((data) => {
+    //console.log("data", data.dataValues.id);
+    res.redirect(`/gallery/${data.dataValues.id}`);
+  });
 });
 //-------BY ID
 app.get('/:id', function(req,res){
@@ -76,34 +102,6 @@ app.delete('/:id/edit', function(req, res) {
 });
 
 
-app.get('/new', function(req, res) {
-  //Picture.findById(req.params.id)
-  res.render('new', {
-    routeOf,
-    headline: 'Adding a picture to the gallery',
-    userName,
-    author:'',
-    title:'',
-    link:'',
-    description:''
-  }); // eof res.render
-});
-app.post('/new', function (req, res) {
-  //.then((data) => {
-    res.render('new', {
-      routeOf,
-      headline: 'Adding a picture to the gallery',
-      userName,
-      pictures: Picture.create({
-                                author: req.body.author,
-                                link: req.body.link,
-                                description: req.body.description,
-                                title: req.body.title
-                              })
-    }); // eof res.render
-      //res.json(user);
-  //});
-});
 
 
 

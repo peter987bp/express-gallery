@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bp =  require('body-parser');
-const pug = require('pug');
+//const pug = require('pug');
 const methodOverride = require('method-override');
 
 const pictures = require('./routes/pictures.js');
