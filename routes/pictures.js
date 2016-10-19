@@ -1,18 +1,29 @@
 var express = require('express');
 var app = express.Router();
-var bp =  require('body-parser');
 
 var db = require('../models');
 
-app.use(bp.urlencoded({extended : true}));
 
 var Picture = db.Picture;
 
+const routeOf = 'pictures';
+const userName = 'userName';
 //works
 app.get('/', function(req, res) {
-  Picture.findAll()
-    .then(function (users) {
-      res.json(users);
+  Picture.findAll({
+    limit: 4
+  })
+
+    .then(function (pictures) {
+      console.log('pictures.title: ', pictures[0].url);
+      // console.log('pictures: ', pictures);
+      res.render('index', {
+        pictures: pictures,
+        routeOf,
+        headline: 'headline',
+        listType: 'listType',
+        userName
+      });
     });
 });
 //works
