@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/* line 6, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 6, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,34 +24,34 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-/* line 27, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 27, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 31, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 31, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 body {
   line-height: 1; }
 
-/* line 34, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 34, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 ol, ul {
   list-style: none; }
 
-/* line 37, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 37, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 blockquote, q {
   quotes: none; }
 
-/* line 40, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 40, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none; }
 
-/* line 49, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 49, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 body {
   background: #ffffff; }
 
-/* line 53, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 53, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .header {
   display: flex;
   flex-flow: row wrap;
@@ -60,7 +60,7 @@ body {
   margin-bottom: 25px;
   margin-left: 75px; }
 
-/* line 62, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 62, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .headerTitle {
   display: inline-block;
   font-size: 65px;
@@ -70,41 +70,41 @@ body {
   color: grey;
   width: 50%; }
 
-/* line 73, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 73, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .headerText {
   display: inline-block;
   width: 50%; }
 
-/* line 78, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 78, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .mainBox {
   display: flex;
   flex-flow: row;
-  width: 2100px;
+  width: 1200px;
   margin: 0 auto;
   font-family: 'Raleway', sans-serif;
   font-size: 20px; }
 
-/* line 87, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 87, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .mainPicture {
   display: inline-block;
   width: 100%; }
 
-/* line 93, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 93, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .mainPhoto {
   display: inline-block;
   width: 60%;
   margin-left: 5px; }
 
-/* line 99, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 99, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #titleName {
   margin-top: 15px;
   margin-bottom: 15px; }
 
-/* line 104, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 104, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .descriptCopyright {
   margin-top: 25px; }
 
-/* line 108, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 108, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .sideGallery {
   display: inline-block;
   width: 35%;
@@ -114,12 +114,12 @@ body {
   flex-flow: column nowrap;
   justify-content: center; }
 
-/* line 118, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 118, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #sidePicture {
   display: inline-block;
   width: 100%; }
 
-/* line 123, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 123, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .sideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
