@@ -14,8 +14,6 @@ app.get('/', function(req, res) {
     limit: 4
   })
     .then(function (pictures) {
-      console.log('pictures.title: ', pictures[0].url);
-      // console.log('pictures: ', pictures);
       res.render('index', {
         pictures: pictures,
         routeOf,
@@ -27,7 +25,7 @@ app.get('/', function(req, res) {
 });
 //works
 app.post('/', function (req, res) {
-  Picture.create({ title: req.body.title, url: req.body.url, rating: req.body.rating})
+  Picture.create({ author: req.body.author, link: req.body.link, description: req.body.description, title: req.body.title})
     .then(function (user) {
       res.json(user);
     });
@@ -36,7 +34,6 @@ app.post('/', function (req, res) {
 app.get('/:id', function(req,res){
   Picture.findById(req.params.id)
     .then(function (pictures) {
-    console.log('pictures: ', pictures);
     res.render('picture_id', {
       pictures: pictures,
       routeOf,
@@ -62,9 +59,7 @@ app.get('/:id/edit',(req,res) =>{
   });
 });
 app.put('/:id/edit',(req,res)=> {
-  console.log('req.body: ', req.body);
-  console.log('req.body.id: ', req.body.id);
-  Picture.update({title: req.body.title, url:req.body.url, rating: req.body.rating},{where: { id: req.params.id}})
+  Picture.update({author: req.body.author, link:req.body.link, description: req.body.description, title: req.body.title},{where: { id: req.params.id}})
   .then((pictures)=>{
     res.redirect(`/gallery/${req.params.id}/edit`);
   });

@@ -15,10 +15,9 @@ block body
       div#gallery
         ul
           each val, index in pictures
-            //- -var urlofpic = #{val.url}
             li #{index} + ': title:' + #{val.title} + 'url: ' + #{val.url}
             h3 First Pic
-            img(class='picture', src= val.url )
+            img(class='picture', src= val.link )
 
 
           //- each val in collection

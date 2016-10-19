@@ -13,7 +13,7 @@ block body
       h3 #{listType}
       p#name #{userName}
       div#gallery
-            li  title:' + #{pictures.title} + 'url: ' + #{pictures.url}
+            li  title:' + #{pictures.title} + 'url: ' + #{pictures.link}
             h3 First Pic
-            img(class='picture', src= pictures.url )
+            img(class='picture', src= pictures.link )
             br
