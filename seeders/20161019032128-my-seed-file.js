@@ -14,35 +14,28 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Pictures', [{
       author : 'Ttutti Frutti',
-      link : 'http://r.ddmcdn.com/s_f/o_1/cx_633/cy_0/cw_1725/ch_1725/w_720/APL/uploads/2014/11/too-cute-doggone-it-video-playlist.jpg',
+      link : 'http://dentalvisit.co.uk/admin_uploads/why_hungary/castle_district.jpg',
       description: 'look how happy he is',
       title : 'cute',
       createdAt : new Date(),
       updatedAt : new Date()
     }, {
       author : 'Ttutti Frutti',
-      link : 'https://en.wikipedia.org/wiki/Bulldog#/media/File:Ozbulldog.jpg',
+      link : 'http://abouthungary.net/wp-content/uploads/2013/06/hungary.jpg',
       description: 'I am the boss around',
       title : 'serious',
       createdAt : new Date(),
       updatedAt : new Date()
     }, {
-      author : 'GoodMan',
-      link : 'http://honeyandbeauty.com/wp-content/uploads/2015/09/Manuka-Honey-Benefits-For-Dogs-.jpg',
-      description: 'my friends are humans',
-      title : 'elegant',
-      createdAt : new Date(),
-      updatedAt : new Date()
-    }, {
-      author : 'GoodMan',
-      link : 'https://www.rover.com/blog/wp-content/uploads/2016/01/dangerous-foods-grapes.png',
-      description: 'i do not remember',
-      title : 'funny',
+      author : 'Marta',
+      link : 'http://s1.1zoom.net/big0/196/429632-Kycb.jpg',
+      description: 'my favorite dog forever',
+      title : 'strong',
       createdAt : new Date(),
       updatedAt : new Date()
     }, {
       author : 'Marta',
-      link : 'https://en.wikipedia.org/wiki/Bulldog#/media/File:White-red_English_bulldog.jpg',
+      link : 'http://s1.1zoom.net/big0/823/Hungary_Budapest_Castles_484265.jpg',
       description: 'my favorite dog forever',
       title : 'strong',
       createdAt : new Date(),

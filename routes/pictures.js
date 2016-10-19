@@ -14,12 +14,11 @@ app.get('/', function(req, res) {
     limit: 4
   })
     .then(function (pictures) {
-      res.render('index', {
-        pictures: pictures,
-        routeOf,
-        headline: 'headline',
-        listType: 'listType',
-        userName
+      var mainPicture = pictures.splice(0,1);
+      var sidePictures = pictures;
+      res.render('gallery/index', {
+        mainPicture: mainPicture[0].dataValues,
+        sidePictures: sidePictures
       });
     });
 });
@@ -29,6 +28,34 @@ app.post('/', function (req, res) {
     .then(function (user) {
       res.json(user);
     });
+});
+app.get('/new', function(req, res) {
+  //Picture.findById(req.params.id)
+  res.render('new', {
+    routeOf,
+    headline: 'Adding a picture to the gallery',
+    userName,
+    author:'',
+    title:'',
+    link:'',
+    description:''
+  }); // eof res.render
+});
+app.post('/new', function (req, res) {
+  //.then((data) => {
+    res.render('new', {
+      routeOf,
+      headline: 'Adding a picture to the gallery',
+      userName,
+      pictures: Picture.create({
+                                author: req.body.author,
+                                link: req.body.link,
+                                description: req.body.description,
+                                title: req.body.title
+                              })
+    }); // eof res.render
+      //res.json(user);
+  //});
 });
 //-------BY ID
 app.get('/:id', function(req,res){
@@ -76,34 +103,7 @@ app.delete('/:id/edit', function(req, res) {
 });
 
 
-app.get('/new', function(req, res) {
-  //Picture.findById(req.params.id)
-  res.render('new', {
-    routeOf,
-    headline: 'Adding a picture to the gallery',
-    userName,
-    author:'',
-    title:'',
-    link:'',
-    description:''
-  }); // eof res.render
-});
-app.post('/new', function (req, res) {
-  //.then((data) => {
-    res.render('new', {
-      routeOf,
-      headline: 'Adding a picture to the gallery',
-      userName,
-      pictures: Picture.create({
-                                author: req.body.author,
-                                link: req.body.link,
-                                description: req.body.description,
-                                title: req.body.title
-                              })
-    }); // eof res.render
-      //res.json(user);
-  //});
-});
+
 
 
 
