@@ -15,5 +15,6 @@ block body
         br
         p#description #{picture.description}
       a.button(href=`/gallery/${picture.id}/edit`) EDIT
-      form#delete(method='post' action='/gallery/#{picture.id}?_method=DELETE')
+      form#delete(method='POST' action=`/gallery/${picture.id}/delete`)
+        input(type="hidden" name="_method" value="DELETE")
         button.button(type='submit') DELETE

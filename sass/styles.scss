@@ -125,3 +125,24 @@ body {
   margin-top: 15px;
   margin-bottom: 25px;
 }
+
+input {
+  width: 100%;
+}
+
+#newPicture {
+  display: block;
+  background-color: yellow;
+  width: 800px;
+  padding: 15px 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#description {
+  height: 200px;
+  resize: none;
+}
+
+#submit {
+
+}

@@ -10,7 +10,7 @@ var db = require('./models');
 app.use(bp.urlencoded({extended : true}));
 
 app.use(methodOverride(function(req, res){
-  console.log('req.body_method: ', req.body._method);
+  //console.log('req.body_method: ', req.body._method);
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
     var method = req.body._method;

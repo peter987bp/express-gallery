@@ -76,9 +76,9 @@ app.get('/:id', function(req,res){
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
   Picture.findById(req.params.id)
-    .then(function (picture) {
+    .then(function (pictures) {
     res.render('gallery/picture_id_edit', {
-      picture: picture,
+      pictures: pictures,
       // routeOf,
       // headline: 'headline',
       // listType: 'listType',
@@ -95,11 +95,12 @@ app.put('/:id/edit',(req,res)=> {
 
 
 //Make to delete by id
-app.delete('/:id', function(req, res) {
-  Picture.destroy({where: {title: req.body.title} })
-    .then(function (users) {
-      res.redirect(`/gallery`);
-    });
+app.delete('/:id/delete', function(req, res) {
+  console.log('request.params', req.params.id);
+  Picture.destroy({where: {id: req.params.id} })
+  .then(function () {
+    res.redirect(`/gallery`);
+  });
 
 });
 

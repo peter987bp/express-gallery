@@ -124,3 +124,20 @@ body {
 .sideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
+
+/* line 129, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+input {
+  width: 100%; }
+
+/* line 133, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+#newPicture {
+  display: block;
+  background-color: yellow;
+  width: 800px;
+  padding: 15px 20px;
+  font-family: 'Raleway', sans-serif; }
+
+/* line 141, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+#description {
+  height: 200px;
+  resize: none; }
