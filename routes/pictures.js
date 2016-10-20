@@ -29,7 +29,7 @@ app.post('/', function (req, res) {
 });
 app.get('/new', function(req, res) {
   //Picture.findById(req.params.id)
-  res.render('new', {
+  res.render('gallery/new', {
     routeOf,
     headline: 'Adding a picture to the gallery',
     userName,
@@ -41,7 +41,7 @@ app.get('/new', function(req, res) {
 });
 app.post('/new', function (req, res) {
   //.then((data) => {
-    res.render('new', {
+    res.render('gallery/new', {
       routeOf,
       headline: 'Adding a picture to the gallery',
       userName,
@@ -58,12 +58,12 @@ app.post('/new', function (req, res) {
 //-------BY ID
 app.get('/:id', function(req,res){
   Picture.findById(req.params.id)
-    .then(function (pictures) {
-    res.render('picture_id', {
-      pictures: pictures,
-      routeOf,
-      headline: 'headline',
-      listType: 'listType',
+    .then(function (picture) {
+    res.render('gallery/picture_id', {
+      picture: picture,
+      // routeOf,
+      // headline: 'headline',
+      // listType: 'listType',
       userName
     });
   });
@@ -74,11 +74,11 @@ app.get('/:id', function(req,res){
 app.get('/:id/edit',(req,res) =>{
   Picture.findById(req.params.id)
     .then(function (pictures) {
-    res.render('picture_id_edit', {
+    res.render('gallery/picture_id_edit', {
       pictures: pictures,
-      routeOf,
-      headline: 'headline',
-      listType: 'listType',
+      // routeOf,
+      // headline: 'headline',
+      // listType: 'listType',
       userName
     });
   });
@@ -92,15 +92,14 @@ app.put('/:id/edit',(req,res)=> {
 
 
 //Make to delete by id
-app.delete('/:id/edit', function(req, res) {
-  Picture.destroy({where: {title: req.body.title} })
-    .then(function (users) {
-      res.redirect(`/gallery`);
-    });
+app.delete('/:id/delete', function(req, res) {
+  console.log('request.params', req.params.id);
+  Picture.destroy({where: {id: req.params.id} })
+  .then(function () {
+    res.redirect(`/gallery`);
+  });
 
 });
-
-
 
 
 
