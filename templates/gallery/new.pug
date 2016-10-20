@@ -7,17 +7,14 @@ block title
 block body
   - var isLoggedIn = true
 
-    if routeOf == 'pictures'
-      h1#header.headerClass(style={color: '#513894'}) #{headline}
-
-      p#name #{username}
-      form#picture(action='/gallery/new' method='post' name='picture')
+    div#newBox
+      form#newPicture(action='/gallery/new' method='post' name='picture')
         fieldset.fieldset
-          legend.legend Picture
+          legend.legend Adding a picture to the gallery
             div
             label.label
               span Author:
-              input#title(type= 'text' name='author' value=author)
+              input#author(type= 'text' name='author' value=author)
             label.label
               span Title:
               input#title(type= 'text' name='title' value=title)
@@ -26,5 +23,7 @@ block body
               input#link(type= 'text' name='link' value=link)
             label.label
               span Description:
-              input#name(type='textarea' name='description' value=description)
-            input.submit(type='submit' value='Submit')
+              input#description(type='textarea' name='description' value=description)
+            br
+            br
+            input#submit(type='submit' value='Submit')
