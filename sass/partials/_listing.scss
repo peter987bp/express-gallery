@@ -1,0 +1,84 @@
+//LISTING PAGE
+.listingHeader{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 75px;
+}
+
+.listingHeaderTitle{
+  display: inline-block;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: 'IM Fell English', serif;
+  font-weight: bold;
+  color: grey;
+  width: 50%;
+
+}
+
+.listingHeaderText{
+  display: inline-block;
+  width: 50%;
+}
+
+.listingMainBox{
+  display: flex;
+  flex-flow:row;
+  width: 1200px;
+  // margin: 0 auto;
+  margin-left: 200px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+.listingMainPicture{
+  display: inline-block;
+  width: 100%;
+  background-color: green;
+}
+
+
+.listingMainPhoto{
+  display: inline-block;
+  width: 80%;
+  margin-left: 5px;
+}
+
+#listingTitleName{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.listingDescriptCopyright{
+  margin-top: 25px;
+}
+
+.listingPictureSet{
+  width:50%;
+  background-color: blue;
+}
+.listingSideGallery{
+
+  // width: 35%;
+  // height: 35%;
+  // margin-top: 10px;
+  // margin-left: 45px;
+  // display:flex;
+  // flex-flow: column nowrap;
+  // justify-content: center;
+  background-color: purple;
+
+}
+#listingSidePicture{
+  display: inline-block;
+  width: 35%;
+  background-color: red;
+}
+
+.listingSideGalleryInfo{
+  margin-top: 15px;
+  margin-bottom: 25px;
+}

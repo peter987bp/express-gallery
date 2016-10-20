@@ -14,6 +14,7 @@ block body
         p#sideLink #{picture.link}
         br
         p#description #{picture.description}
+      if isLoggedIn
       a.button(href=`/gallery/${picture.id}/edit`) EDIT
       form#delete(method='POST' action=`/gallery/${picture.id}/delete`)
         input(type="hidden" name="_method" value="DELETE")

@@ -13,8 +13,8 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert('Users', [{
-      USERNAME : 'test',
-      PASSWORD : 'password',
+      username : 'test',
+      password : 'password',
       createdAt : new Date(),
       updatedAt : new Date()
     }

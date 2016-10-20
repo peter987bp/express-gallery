@@ -1,14 +1,7 @@
 const express = require('express');
 const app = express.Router();
-
 const db = require('../models');
-
-
 const Picture = db.Picture;
-
-//whitespaces const and console.log
-//sepearte partials to make css broken up  make it route correectly and link the images to separate pages. repeated index pages. update the models to set the relationships. Update to do database checks.
-
 
 //---HOMEPAGE
 app.get('/', (req, res)=> {
@@ -24,7 +17,6 @@ app.get('/', (req, res)=> {
     });
   });
 });
-
 app.get('/new',(req, res)=> {
   //Picture.findById(req.params.id)
   res.render('gallery/new', {
@@ -52,14 +44,12 @@ app.post('/new', (req, res) => {
 //-------BY ID
 app.get('/:id', (req,res)=> {
   Picture.findById(req.params.id)
-    .then(function (picture) {
+  .then(function (picture) {
     res.render('gallery/picture_id', {
       picture: picture
     });
   });
-
 });
-
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
   Picture.findById(req.params.id)
@@ -75,8 +65,6 @@ app.put('/:id/edit',(req,res)=> {
     res.redirect(`/gallery/${req.params.id}/edit`);
   });
 });
-
-
 //Make to delete by id
 app.delete('/:id/delete', (req, res) => {
   Picture.destroy({where: {id: req.params.id} })
@@ -84,5 +72,4 @@ app.delete('/:id/delete', (req, res) => {
     res.redirect(`/gallery`);
   });
 });
-
 module.exports= app;

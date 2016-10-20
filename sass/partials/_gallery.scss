@@ -1,0 +1,64 @@
+.galleryHeader{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 75px;
+}
+.galleryHeaderTitle{
+  display: inline-block;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: 'IM Fell English', serif;
+  font-weight: bold;
+  color: grey;
+  width: 50%;
+
+}
+.galleryHeaderText{
+  display: inline-block;
+  width: 50%;
+}
+.galleryMainBox{
+  display: flex;
+  flex-flow:row;
+  width: 1200px;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+.galleryMainPicture{
+  display: inline-block;
+  width: 100%;
+}
+.galleryMainPhoto{
+  display: inline-block;
+  width: 60%;
+  margin-left: 5px;
+  font-family: 'Raleway', sans-serif;
+}
+#galleryTitleName{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.galleryDescriptCopyright{
+  margin-top: 25px;
+}
+.gallerySideGallery{
+  display: inline-block;
+  width: 35%;
+  height: 35%;
+  margin-top: 10px;
+  margin-left: 45px;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+#gallerySidePicture{
+  display: inline-block;
+  width: 100%;
+}
+.gallerySideGalleryInfo{
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
