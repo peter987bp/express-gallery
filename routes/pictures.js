@@ -1,70 +1,60 @@
-var express = require('express');
-var app = express.Router();
+const express = require('express');
+const app = express.Router();
 
-var db = require('../models');
+const db = require('../models');
 
 
-var Picture = db.Picture;
+const Picture = db.Picture;
+
+//whitespaces const and console.log
+//sepearte partials to make css broken up  make it route correectly and link the images to separate pages. repeated index pages. update the models to set the relationships. Update to do database checks.
+
 
 //---HOMEPAGE
-app.get('/', function(req, res) {
+app.get('/', (req, res)=> {
   Picture.findAll({
     limit: 4
   })
-    .then(function (pictures) {
-      var mainPicture = pictures.splice(0,1);
-      var sidePictures = pictures;
-      res.render('gallery/index', {
-        mainPicture: mainPicture[0].dataValues,
-        sidePictures: sidePictures
-      });
+  .then((pictures)=> {
+    let mainPicture = pictures.splice(0,1);
+    let sidePictures = pictures;
+    res.render('gallery/index', {
+      mainPicture: mainPicture[0].dataValues,
+      sidePictures: sidePictures
     });
+  });
 });
-//works
-app.post('/', function (req, res) {
-  Picture.create({ author: req.body.author, link: req.body.link, description: req.body.description, title: req.body.title})
-    .then(function (user) {
-      res.json(user);
-    });
-});
-app.get('/new', function(req, res) {
+
+app.get('/new',(req, res)=> {
   //Picture.findById(req.params.id)
   res.render('gallery/new', {
-    routeOf,
-    headline: 'Adding a picture to the gallery',
-    userName,
     author:'',
     title:'',
     link:'',
     description:''
-  }); // eof res.render
+  });
 });
-app.post('/new', function (req, res) {
-  //.then((data) => {
+app.post('/new', (req, res) => {
+  Picture.create(
+   {
+     author: req.body.author,
+     link: req.body.link,
+     description: req.body.description,
+     title: req.body.title
+   })
+  .then((picture) => {
     res.render('gallery/new', {
-      routeOf,
-      headline: 'Adding a picture to the gallery',
-      userName,
-      pictures: Picture.create({
-                                author: req.body.author,
-                                link: req.body.link,
-                                description: req.body.description,
-                                title: req.body.title
-                              })
-    }); // eof res.render
-      //res.json(user);
-  //});
+      pictures: picture
+
+    });
+  });
 });
 //-------BY ID
-app.get('/:id', function(req,res){
+app.get('/:id', (req,res)=> {
   Picture.findById(req.params.id)
     .then(function (picture) {
     res.render('gallery/picture_id', {
-      picture: picture,
-      // routeOf,
-      // headline: 'headline',
-      // listType: 'listType',
-      userName
+      picture: picture
     });
   });
 
@@ -73,13 +63,9 @@ app.get('/:id', function(req,res){
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
   Picture.findById(req.params.id)
-    .then(function (pictures) {
+    .then((pictures) => {
     res.render('gallery/picture_id_edit', {
-      pictures: pictures,
-      // routeOf,
-      // headline: 'headline',
-      // listType: 'listType',
-      userName
+      pictures: pictures
     });
   });
 });
@@ -92,16 +78,11 @@ app.put('/:id/edit',(req,res)=> {
 
 
 //Make to delete by id
-app.delete('/:id/delete', function(req, res) {
-  console.log('request.params', req.params.id);
+app.delete('/:id/delete', (req, res) => {
   Picture.destroy({where: {id: req.params.id} })
-  .then(function () {
+  .then(() => {
     res.redirect(`/gallery`);
   });
-
 });
-
-
-
 
 module.exports= app;
