@@ -1,0 +1,19 @@
+extends ./layout.pug
+include ./mixins.pug
+
+block title
+  title Photo-Gallery
+
+block body
+  - var isLoggedIn = true
+
+    div#mainBox
+      div.mainPhoto
+        img.mainPicture(src= picture.link )
+        p#titleName #{picture.title}
+        p#sideLink #{picture.link}
+        br
+        p#description #{picture.description}
+      a.button(href=`/gallery/${picture.id}/edit`) EDIT
+      form#delete(method='post' action='/gallery/#{picture.id}?_method=DELETE')
+        button.button(type='submit') DELETE

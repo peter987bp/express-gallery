@@ -25,7 +25,7 @@ app.set('view engine', 'pug');
 app.set('views', './templates');
 
 app.use(express.static('./public'));
-
+app.use(methodOverride('_method'));  // must before the route
 app.use('/gallery', pictures);
 
 //routes for main page

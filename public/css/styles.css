@@ -93,18 +93,19 @@ body {
 .mainPhoto {
   display: inline-block;
   width: 60%;
-  margin-left: 5px; }
+  margin-left: 5px;
+  font-family: 'Raleway', sans-serif; }
 
-/* line 99, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 100, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #titleName {
   margin-top: 15px;
   margin-bottom: 15px; }
 
-/* line 104, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 105, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .descriptCopyright {
   margin-top: 25px; }
 
-/* line 108, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 109, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .sideGallery {
   display: inline-block;
   width: 35%;
@@ -114,12 +115,12 @@ body {
   flex-flow: column nowrap;
   justify-content: center; }
 
-/* line 118, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 119, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #sidePicture {
   display: inline-block;
   width: 100%; }
 
-/* line 123, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 124, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .sideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
