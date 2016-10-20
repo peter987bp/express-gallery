@@ -1,0 +1,17 @@
+extends ./layout
+include ./mixins
+
+block title
+  title Photo-Gallery
+
+block body
+  div.lisitngMainBox
+    div.listingMainPhoto
+      div.listingMarginMainPicture
+        p#listingTitleName #{mainPicture.title}
+        img.listingMainPicture( src= mainPicture.link )
+      div.lisitngDescriptCopyright
+        p#listingDescription Description: #{mainPicture.description}
+        p copyright:  + #{mainPicture.link}
+    div.listingSideGallery
+       +picturesList(sidePictures)

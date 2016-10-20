@@ -5,6 +5,7 @@ const pug = require('pug');
 const methodOverride = require('method-override');
 
 const pictures = require('./routes/pictures.js');
+const listings = require('./routes/listing.js');
 var db = require('./models');
 
 app.use(bp.urlencoded({extended : true}));
@@ -27,6 +28,8 @@ app.set('views', './templates');
 app.use(express.static('./public'));
 
 app.use('/gallery', pictures);
+
+app.use('/listing', listings);
 
 //routes for main page
 app.get('/', function(req,res){

@@ -6,8 +6,6 @@ var db = require('../models');
 
 var Picture = db.Picture;
 
-const routeOf = 'pictures';
-const userName = 'userName';
 //---HOMEPAGE
 app.get('/', function(req, res) {
   Picture.findAll({
