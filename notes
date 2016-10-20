@@ -1,0 +1,17 @@
+routes                        pug                                     sass
+
+get('/')                      ?gallery/login
+get('/')                       index.pug = desktop detail              ok
+get('/listing')                /listing/index.pug                     70%
+post('/') -- noo need
+get('/new')                    gallery/new.pug                        50%
+post('/new')                   gallery/new.pug                        50%
+get('/:id')                    gallery/picture_id.pug                 80%
+get('/:id/edit')               gallery/picture_id_edit.pug            50%
+put('/:id/edit')               gallery/picture_id_edit.pug            50%
+delete('/:id/delete')          gallery/picture_id.pug(just a button)  80%
+login                          login/?                                started
+
+delete the delete under the :id/edit'
+
+

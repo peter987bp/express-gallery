@@ -51,13 +51,8 @@ q:before, q:after {
 body {
   background: #ffffff; }
 
-<<<<<<< HEAD
-/* line 53, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
-.galleryHeader {
-=======
 /* line 53, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.header {
->>>>>>> development
+.galleryHeader {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -65,13 +60,8 @@ body {
   margin-bottom: 25px;
   margin-left: 75px; }
 
-<<<<<<< HEAD
-/* line 62, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
-.galleryHeaderTitle {
-=======
 /* line 62, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.headerTitle {
->>>>>>> development
+.galleryHeaderTitle {
   display: inline-block;
   font-size: 65px;
   font-weight: bold;
@@ -80,23 +70,13 @@ body {
   color: grey;
   width: 50%; }
 
-<<<<<<< HEAD
-/* line 73, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 73, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .galleryHeaderText {
   display: inline-block;
   width: 50%; }
 
-/* line 78, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
-.galleryMainBox {
-=======
-/* line 73, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.headerText {
-  display: inline-block;
-  width: 50%; }
-
 /* line 78, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.mainBox {
->>>>>>> development
+.galleryMainBox {
   display: flex;
   flex-flow: row;
   width: 1200px;
@@ -104,53 +84,29 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 20px; }
 
-<<<<<<< HEAD
-/* line 87, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 87, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .galleryMainPicture {
   display: inline-block;
   width: 100%; }
 
-/* line 93, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
-.galleryMainPhoto {
-=======
-/* line 87, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.mainPicture {
-  display: inline-block;
-  width: 100%; }
-
 /* line 93, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.mainPhoto {
->>>>>>> development
+.galleryMainPhoto {
   display: inline-block;
   width: 60%;
   margin-left: 5px;
   font-family: 'Raleway', sans-serif; }
 
-<<<<<<< HEAD
-/* line 99, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 100, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #galleryTitleName {
   margin-top: 15px;
   margin-bottom: 15px; }
 
-/* line 104, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 105, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .galleryDescriptCopyright {
   margin-top: 25px; }
 
-/* line 108, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
-.gallerySideGallery {
-=======
-/* line 100, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-#titleName {
-  margin-top: 15px;
-  margin-bottom: 15px; }
-
-/* line 105, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.descriptCopyright {
-  margin-top: 25px; }
-
 /* line 109, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.sideGallery {
->>>>>>> development
+.gallerySideGallery {
   display: inline-block;
   width: 35%;
   height: 35%;
@@ -159,18 +115,17 @@ body {
   flex-flow: column nowrap;
   justify-content: center; }
 
-<<<<<<< HEAD
-/* line 118, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 119, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #gallerySidePicture {
   display: inline-block;
   width: 100%; }
 
-/* line 123, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 124, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .gallerySideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
 
-/* line 129, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 130, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingHeader {
   display: flex;
   flex-flow: row wrap;
@@ -179,7 +134,7 @@ body {
   margin-bottom: 25px;
   margin-left: 75px; }
 
-/* line 138, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 139, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingHeaderTitle {
   display: inline-block;
   font-size: 65px;
@@ -189,12 +144,12 @@ body {
   color: grey;
   width: 50%; }
 
-/* line 149, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 150, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingHeaderText {
   display: inline-block;
   width: 50%; }
 
-/* line 154, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 155, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingMainBox {
   display: flex;
   flex-flow: row;
@@ -203,66 +158,57 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 20px; }
 
-/* line 163, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 164, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingMainPicture {
   display: inline-block;
   width: 100%; }
 
-/* line 169, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 170, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingMainPhoto {
   display: inline-block;
   width: 80%;
   margin-left: 5px; }
 
-/* line 175, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 176, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #listingTitleName {
   margin-top: 15px;
   margin-bottom: 15px; }
 
-/* line 180, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 181, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingDescriptCopyright {
   margin-top: 25px; }
 
-/* line 184, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 185, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingMainBox {
   display: flex;
   flex-flow: row nowrap;
   background-color: pink; }
 
-/* line 189, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 190, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingPictureSet {
   width: 50%;
   background-color: blue; }
 
-/* line 193, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 194, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingSideGallery {
   background-color: purple; }
 
-/* line 205, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 206, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #listingSidePicture {
   display: inline-block;
   width: 35%;
   background-color: red; }
 
-/* line 211, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 212, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 .listingSideGalleryInfo {
-=======
-/* line 119, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-#sidePicture {
-  display: inline-block;
-  width: 100%; }
-
-/* line 124, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
-.sideGalleryInfo {
->>>>>>> development
   margin-top: 15px;
   margin-bottom: 25px; }
 
-/* line 129, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 217, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 input {
   width: 100%; }
 
-/* line 133, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 221, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #newPicture {
   display: block;
   background-color: yellow;
@@ -270,7 +216,7 @@ input {
   padding: 15px 20px;
   font-family: 'Raleway', sans-serif; }
 
-/* line 141, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
+/* line 229, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 #description {
   height: 200px;
   resize: none; }
