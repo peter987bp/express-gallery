@@ -13,18 +13,16 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert('Users', [{
-      first_name : 'Bryan',
-      last_name : 'Peters',
-      email : 'bb@test.com',
+      username : 'test',
+      password : 'password',
       createdAt : new Date(),
       updatedAt : new Date()
-    }, {
-      first_name : 'Marta',
-      last_name : 'Eden',
-      email : 'me@test.com',
+    },
+    {
+      username : 'test2',
+      password : 'password',
       createdAt : new Date(),
       updatedAt : new Date()
-
     }
 
     ], {});

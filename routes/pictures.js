@@ -1,92 +1,99 @@
-var express = require('express');
-var app = express.Router();
-
-var db = require('../models');
-
-
-var Picture = db.Picture;
+const express = require('express');
+const app = express.Router();
+const db = require('../models');
+const Picture = db.Picture;
 
 //---HOMEPAGE
-app.get('/', function(req, res) {
+app.get('/', (req, res)=> {
   Picture.findAll({
     limit: 4
   })
-    .then(function (pictures) {
-      var mainPicture = pictures.splice(0,1);
-      var sidePictures = pictures;
-      res.render('gallery/index', {
-        mainPicture: mainPicture[0].dataValues,
-        sidePictures: sidePictures
-      });
-    });
-});
-//works - No need
-app.post('/', function (req, res) {
-  Picture.create({ author: req.body.author, link: req.body.link, description: req.body.description, title: req.body.title})
-    .then(function (user) {
-      res.json(user);
-    });
-});
-app.get('/new', function(req, res) {
-  //Picture.findById(req.params.id)
-  res.render('gallery/new', {
-    author:'',
-    title:'',
-    link:'',
-    description:''
-  }); // eof res.render
-});
-app.post('/new', function (req, res) {
-  //.then((data) => {
-    res.render('gallery/new', {
-      pictures: Picture.create({
-                                author: req.body.author,
-                                link: req.body.link,
-                                description: req.body.description,
-                                title: req.body.title
-                              })
-    }); // eof res.render
-  //});
-});
-//-------BY ID
-app.get('/:id', function(req,res){
-  Picture.findById(req.params.id)
-    .then(function (picture) {
-    res.render('gallery/picture_id', {
-      picture: picture
+  .then((pictures)=> {
+    let mainPicture = pictures.splice(0,1);
+    let sidePictures = pictures;
+    res.render('gallery/index', {
+      mainPicture: mainPicture[0].dataValues,
+      sidePictures: sidePictures
     });
   });
+});
+app.get('/new',(req, res)=> {
+  console.log('req.body: ', req.body);
+  //if user is logged in they can delete
+    if(typeof req.user !== 'undefined'){
+      console.log('req.body2: ', req.body);
+      res.render('gallery/new', {
+        author:'',
+        title:'',
+        link:'',
+        description:''
+      });
+    }else{
+      res.redirect('/login');
+    }
 
 });
+app.post('/new', (req, res) => {
+  Picture.create(
+   {
+     author: req.body.author,
+     link: req.body.link,
+     description: req.body.description,
+     title: req.body.title
+   })
+  .then((picture) => {
+    res.render('gallery/new', {
+      pictures: picture
 
+    });
+  });
+});
+//-------BY ID
+app.get('/:id', (req,res)=> {
+
+  //if user id matches photo id show edit/del.
+  Picture.findById(req.params.id)
+  .then((picture)=> {
+    console.log('picture.id: ', picture.userID);
+    let isLoggedIn = false;
+    if(typeof req.user !== 'undefined'){
+      if(req.user.id === picture.userID){
+        isLoggedIn = true;
+      }
+    }
+
+    //link a user to a photo
+    //if a user should be allowed to edit
+
+    res.render('gallery/picture_id', {
+      picture: picture,
+      isLoggedIn: isLoggedIn
+    });
+  });
+});
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
   Picture.findById(req.params.id)
-    .then(function (pictures) {
+    .then((pictures) => {
     res.render('gallery/picture_id_edit', {
       pictures: pictures
     });
   });
 });
 app.put('/:id/edit',(req,res)=> {
+  //Check if user belongs to the id being updated
+  // console.log('req.: ', req.);
+  console.log('req.user: ', req.user);
   Picture.update({author: req.body.author, link:req.body.link, description: req.body.description, title: req.body.title},{where: { id: req.params.id}})
   .then((pictures)=>{
     res.redirect(`/gallery/${req.params.id}/edit`);
   });
 });
-
-
 //Make to delete by id
-app.delete('/:id/delete', function(req, res) {
-  console.log('request.params', req.params.id);
+app.delete('/:id/delete', (req, res) => {
   Picture.destroy({where: {id: req.params.id} })
-  .then(function () {
+  .then(() => {
     res.redirect(`/gallery`);
   });
-
 });
-
-
-
-
 module.exports= app;

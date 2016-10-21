@@ -1,4 +1,4 @@
-extends ./layout.pug
+extends ../layout.pug
 include ./mixins.pug
 
 block title
@@ -6,13 +6,10 @@ block title
 
 block body
   - var isLoggedIn = true
-
-
       div#gallery
             li  title:' + #{pictures.title} + 'url: ' + #{pictures.link}
             h3 First Pic
             img(class='picture', src= pictures.link )
-
   h3#header.headerClass Edit Pictures
   form(action=`/gallery/${pictures.id}/edit` method='POST' enctype="application/x-www-form-urlencoded")
     input(type="hidden" name="_method" value="PUT")
