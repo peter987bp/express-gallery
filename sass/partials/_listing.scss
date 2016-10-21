@@ -23,7 +23,7 @@
   display: inline-block;
   width: 50%;
 }
-
+//UpperSet
 .listingMainBox{
   display: flex;
   flex-flow:row;
@@ -33,48 +33,49 @@
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
 }
-
+.outerListingMainPhoto{
+  display:flex;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 1400px;
+  height: 100%;
+  background-color: teal;
+}
+.listingMainPhoto{
+  background-color: orange;
+  display: inline-block;
+  width: 80%;
+}
 .listingMainPicture{
   display: inline-block;
   width: 100%;
   background-color: green;
 }
-
-
-.listingMainPhoto{
-  display: inline-block;
-  width: 80%;
-  margin-left: 5px;
-}
-
 #listingTitleName{
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
 .listingDescriptCopyright{
   margin-top: 25px;
 }
-
-.listingPictureSet{
-  width:50%;
-  background-color: blue;
-}
+//BottomSet
 .listingSideGallery{
-
-  // width: 35%;
-  // height: 35%;
-  // margin-top: 10px;
-  // margin-left: 45px;
-  // display:flex;
-  // flex-flow: column nowrap;
-  // justify-content: center;
+  width: 1400px;
+  height: 100%;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   background-color: purple;
-
+}
+.listingPictureSet{
+  flex: 0 0 auto;
+  width:40%;
+  background-color: blue;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 #listingSidePicture{
-  display: inline-block;
-  width: 35%;
+  width: 50%;
   background-color: red;
 }
 

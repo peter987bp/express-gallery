@@ -83,7 +83,7 @@ app.use('/login', login);
 //routes for main page
 app.get('/', function(req,res){
   Picture.findAll({
-    limit: 4
+    limit: 5
   })
   .then((pictures)=> {
     let mainPicture = pictures.splice(0,1);

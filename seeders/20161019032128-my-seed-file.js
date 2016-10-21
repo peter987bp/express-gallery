@@ -53,6 +53,15 @@ module.exports = {
       createdAt : new Date(),
       updatedAt : new Date(),
       userID: '1'
+    },
+    {
+      author : 'Marta',
+      link : 'https://cdn.european-traveler.com/wp-content/uploads/2012/06/Schloss-Oberhofen-Castle-on-Lake-Thun19-e1466417487264.jpg',
+      description: 'my favorite dog forever',
+      title : 'strong',
+      createdAt : new Date(),
+      updatedAt : new Date(),
+      userID: '1'
     }
 
     ], {});
