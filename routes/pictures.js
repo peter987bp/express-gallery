@@ -43,18 +43,21 @@ app.post('/new', (req, res) => {
 });
 //-------BY ID
 app.get('/:id', (req,res)=> {
-  let loggedInUser = req.user.id;
+  // let loggedUserId = req.user.id;
+
   //if user id matches photo id show edit/del.
   Picture.findById(req.params.id)
-  .then(function (picture) {
+  .then((picture)=> {
     console.log('picture.id: ', picture.userID);
     let isLoggedIn = false;
-    if(loggedInUser === picture.id){
-      isLoggedIn = true;
+    if(typeof req.user !== 'undefined'){
+      if(req.user.id === picture.id){
+        isLoggedIn = true;
+      }
     }
-  console.log('isLoggedIn: ', isLoggedIn);
-  //link a user to a photo
-  //if a user should be allowed to edit
+
+    //link a user to a photo
+    //if a user should be allowed to edit
 
     res.render('gallery/picture_id', {
       picture: picture,
