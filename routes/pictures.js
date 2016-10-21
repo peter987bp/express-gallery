@@ -18,13 +18,20 @@ app.get('/', (req, res)=> {
   });
 });
 app.get('/new',(req, res)=> {
-  //Picture.findById(req.params.id)
-  res.render('gallery/new', {
-    author:'',
-    title:'',
-    link:'',
-    description:''
-  });
+  console.log('req.body: ', req.body);
+  //if user is logged in they can delete
+    if(typeof req.user !== 'undefined'){
+      console.log('req.body2: ', req.body);
+      res.render('gallery/new', {
+        author:'',
+        title:'',
+        link:'',
+        description:''
+      });
+    }else{
+      res.redirect('/login');
+    }
+
 });
 app.post('/new', (req, res) => {
   Picture.create(
@@ -43,7 +50,6 @@ app.post('/new', (req, res) => {
 });
 //-------BY ID
 app.get('/:id', (req,res)=> {
-  // let loggedUserId = req.user.id;
 
   //if user id matches photo id show edit/del.
   Picture.findById(req.params.id)
@@ -51,7 +57,7 @@ app.get('/:id', (req,res)=> {
     console.log('picture.id: ', picture.userID);
     let isLoggedIn = false;
     if(typeof req.user !== 'undefined'){
-      if(req.user.id === picture.id){
+      if(req.user.id === picture.userID){
         isLoggedIn = true;
       }
     }
@@ -77,7 +83,7 @@ app.get('/:id/edit',(req,res) =>{
 app.put('/:id/edit',(req,res)=> {
   //Check if user belongs to the id being updated
   // console.log('req.: ', req.);
-  // console.log('req.body.userid: ', req.body.userid);
+  console.log('req.user: ', req.user);
   Picture.update({author: req.body.author, link:req.body.link, description: req.body.description, title: req.body.title},{where: { id: req.params.id}})
   .then((pictures)=>{
     res.redirect(`/gallery/${req.params.id}/edit`);
