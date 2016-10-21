@@ -16,3 +16,9 @@ block body
         p copyright:  + #{mainPicture.link}
     div.gallerySideGallery
        +picturesList(sidePictures)
+
+    if isLoggedIn === true
+      a.button(href=`/gallery/${mainPicture.id}/edit`) EDIT
+      form#delete(method='POST' action=`/gallery/${mainPicture.id}/delete`)
+        input(type="hidden" name="_method" value="DELETE")
+        button.button(type='submit') DELETE

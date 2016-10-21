@@ -12,7 +12,10 @@ const db = require('./models');
 const Picture = db.Picture;
 const User = db.User;
 
+
+const RedisStore = require('connect-redis')(session);
 app.use(bp.urlencoded({extended : true}));
+
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
@@ -29,6 +32,7 @@ app.use(methodOverride('_method'));  // must before the route
 //---------------LOGIN-------------------
 //Attach expression session as middleware and initialize handshake
 app.use(session({
+  store: new RedisStore(),
   secret: CONFIG.SECRET,
   resave: false,
   saveUninitialized: true,
@@ -87,7 +91,7 @@ app.get('/', function(req,res){
   .then((pictures)=> {
     let mainPicture = pictures.splice(0,1);
     let sidePictures = pictures;
-    res.render('listing/index', {
+    res.render('index', {
       mainPicture: mainPicture[0].dataValues,
       sidePictures: sidePictures
     });

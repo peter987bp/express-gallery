@@ -3,17 +3,28 @@ const app = express.Router();
 const db = require('../models');
 const Picture = db.Picture;
 
-//---HOMEPAGE
-app.get('/', (req, res)=> {
+//---GallerybyID
+app.get('/:id', (req,res)=>{
   Picture.findAll({
-    limit: 4
-  })
-  .then((pictures)=> {
-    let mainPicture = pictures.splice(0,1);
-    let sidePictures = pictures;
-    res.render('gallery/index', {
-      mainPicture: mainPicture[0].dataValues,
-      sidePictures: sidePictures
+     limit: 3,
+     order: [['createdAt', 'DESC']]
+   })
+  .then((sidePictures)=>{
+    Picture.findById(req.params.id)
+    .then((mainPicture)=> {
+      let isLoggedIn = false;
+      if(typeof req.user !== 'undefined'){
+        if(req.user.id === mainPicture.userID){
+          isLoggedIn = true;
+        }
+      }
+      console.log('sidePictures: ', sidePictures);
+      console.log('isLoggedIn: ', isLoggedIn);
+      res.render('gallery/gallery', {
+        mainPicture: mainPicture,
+        isLoggedIn: isLoggedIn,
+        sidePictures: sidePictures
+      });
     });
   });
 });
@@ -46,28 +57,7 @@ app.post('/new', (req, res) => {
     });
   });
 });
-//-------BY ID
-app.get('/:id', (req,res)=> {
 
-  //if user id matches photo id show edit/del.
-  Picture.findById(req.params.id)
-  .then((picture)=> {
-    let isLoggedIn = false;
-    if(typeof req.user !== 'undefined'){
-      if(req.user.id === picture.userID){
-        isLoggedIn = true;
-      }
-    }
-
-    //link a user to a photo
-    //if a user should be allowed to edit
-
-    res.render('gallery/picture_id', {
-      picture: picture,
-      isLoggedIn: isLoggedIn
-    });
-  });
-});
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
   Picture.findById(req.params.id)

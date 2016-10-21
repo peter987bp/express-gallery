@@ -85,7 +85,7 @@ q:before, q:after {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  width: 1400px;
+  width: 1200px;
   height: 100%;
   background-color: teal; }
 
@@ -112,7 +112,7 @@ q:before, q:after {
 
 /* line 62, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingSideGallery {
-  width: 1400px;
+  width: 1200px;
   height: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -130,9 +130,10 @@ q:before, q:after {
 /* line 77, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 #listingSidePicture {
   width: 50%;
+  align: center;
   background-color: red; }
 
-/* line 82, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 83, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingSideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
