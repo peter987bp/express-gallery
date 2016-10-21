@@ -14,9 +14,4 @@ app.post('/', passport.authenticate('local', {
   failureRedirect: '/login',
 }));
 
-app.get('/logout', (req, res) =>{
-  req.logout(); //logs the user out - removes session form server and client
-  res.redirect('/login'); //redirect user to the login page
-});
-
 module.exports=app;

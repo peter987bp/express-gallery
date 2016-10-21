@@ -94,6 +94,11 @@ app.get('/', function(req,res){
     });
   });
 });
+app.get('/logout', (req, res) =>{
+  //console.log('logout clicked');
+  req.logout('/'); //logs the user out - removes session form server and client
+  res.redirect('/login'); //redirect user to the login page
+});
 app.listen(8080, function() {
   console.log('server started');
   db.sequelize.sync();
