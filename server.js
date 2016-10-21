@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bp =  require('body-parser');
 const methodOverride = require('method-override');
-const pictures = require('./routes/pictures.js');
+const gallery = require('./routes/gallery.js');
 const login = require('./routes/login.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -81,7 +81,7 @@ const isAuthenticated = (req, res, next) =>{
   //if user is uathenticated - call next
   return next();
 };
-app.use('/gallery', pictures);
+app.use('/gallery', gallery);
 app.use('/login', login);
 //routes for main page
 app.get('/', function(req,res){
