@@ -17,6 +17,12 @@ module.exports = {
       password : 'password',
       createdAt : new Date(),
       updatedAt : new Date()
+    },
+    {
+      username : 'test2',
+      password : 'password',
+      createdAt : new Date(),
+      updatedAt : new Date()
     }
 
     ], {});

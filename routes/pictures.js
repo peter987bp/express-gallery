@@ -43,10 +43,22 @@ app.post('/new', (req, res) => {
 });
 //-------BY ID
 app.get('/:id', (req,res)=> {
+  let loggedInUser = req.user.id;
+  //if user id matches photo id show edit/del.
   Picture.findById(req.params.id)
   .then(function (picture) {
+    console.log('picture.id: ', picture.userID);
+    let isLoggedIn = false;
+    if(loggedInUser === picture.id){
+      isLoggedIn = true;
+    }
+  console.log('isLoggedIn: ', isLoggedIn);
+  //link a user to a photo
+  //if a user should be allowed to edit
+
     res.render('gallery/picture_id', {
-      picture: picture
+      picture: picture,
+      isLoggedIn: isLoggedIn
     });
   });
 });
@@ -60,6 +72,9 @@ app.get('/:id/edit',(req,res) =>{
   });
 });
 app.put('/:id/edit',(req,res)=> {
+  //Check if user belongs to the id being updated
+  // console.log('req.: ', req.);
+  // console.log('req.body.userid: ', req.body.userid);
   Picture.update({author: req.body.author, link:req.body.link, description: req.body.description, title: req.body.title},{where: { id: req.params.id}})
   .then((pictures)=>{
     res.redirect(`/gallery/${req.params.id}/edit`);

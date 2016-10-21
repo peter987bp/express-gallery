@@ -9,7 +9,8 @@ block body
     div.listingMainPhoto
       div.listingMarginMainPicture
         p#listingTitleName #{mainPicture.title}
-        img.listingMainPicture( src= mainPicture.link )
+        a(href='gallery/' + mainPicture.id)
+         img.listingMainPicture( src= mainPicture.link )
       div.lisitngDescriptCopyright
         p#listingDescription Description: #{mainPicture.description}
         p copyright:  + #{mainPicture.link}

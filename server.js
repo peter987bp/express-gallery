@@ -4,7 +4,6 @@ const bp =  require('body-parser');
 const methodOverride = require('method-override');
 const pictures = require('./routes/pictures.js');
 const login = require('./routes/login.js');
-const secret = require('./routes/secret.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require ('express-session');
@@ -81,7 +80,6 @@ const isAuthenticated = (req, res, next) =>{
 };
 app.use('/gallery', pictures);
 app.use('/login', login);
-app.use('/secret', secret);
 //routes for main page
 app.get('/', function(req,res){
   Picture.findAll({
@@ -90,7 +88,6 @@ app.get('/', function(req,res){
   .then((pictures)=> {
     let mainPicture = pictures.splice(0,1);
     let sidePictures = pictures;
-    console.log('req.user: ', req.user);
     res.render('listing/index', {
       mainPicture: mainPicture[0].dataValues,
       sidePictures: sidePictures

@@ -1,12 +1,10 @@
-extends ./layout.pug
+extends ../layout.pug
 include ./mixins.pug
 
 block title
   title Photo-Gallery
 
 block body
-  - var isLoggedIn = true
-
     div#mainBox
       div.mainPhoto
         img.mainPicture(src= picture.link )
@@ -14,8 +12,8 @@ block body
         p#sideLink #{picture.link}
         br
         p#description #{picture.description}
-      if isLoggedIn
-      a.button(href=`/gallery/${picture.id}/edit`) EDIT
-      form#delete(method='POST' action=`/gallery/${picture.id}/delete`)
-        input(type="hidden" name="_method" value="DELETE")
-        button.button(type='submit') DELETE
+      if isLoggedIn === true
+        a.button(href=`/gallery/${picture.id}/edit`) EDIT
+        form#delete(method='POST' action=`/gallery/${picture.id}/delete`)
+          input(type="hidden" name="_method" value="DELETE")
+          button.button(type='submit') DELETE
