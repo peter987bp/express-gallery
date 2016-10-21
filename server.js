@@ -14,7 +14,6 @@ const User = db.User;
 
 app.use(bp.urlencoded({extended : true}));
 app.use(methodOverride(function(req, res){
-  //console.log('req.body_method: ', req.body._method);
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
     let method = req.body._method;
@@ -95,7 +94,6 @@ app.get('/', function(req,res){
   });
 });
 app.get('/logout', (req, res) =>{
-  //console.log('logout clicked');
   req.logout('/'); //logs the user out - removes session form server and client
   res.redirect('/login'); //redirect user to the login page
 });
