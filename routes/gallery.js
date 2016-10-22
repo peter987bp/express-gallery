@@ -4,6 +4,36 @@ const db = require('../models');
 const Picture = db.Picture;
 
 //---GallerybyID
+app.get('/new',(req, res)=> {
+    console.log('req.body: ', req.body);
+    if(typeof req.user !== 'undefined'){
+      res.render('gallery/new', {
+        author:'',
+        title:'',
+        link:'',
+        description:''
+      });
+    }else{
+      res.redirect('/login');
+    }
+
+});
+app.post('/new', (req, res) => {
+  Picture.create(
+   {
+     author: req.body.author,
+     link: req.body.link,
+     description: req.body.description,
+     title: req.body.title,
+     userID: req.user.id
+   })
+  .then((picture) => {
+    res.render('gallery/new', {
+      pictures: picture
+
+    });
+  });
+});
 app.get('/:id', (req,res)=>{
   Picture.findAll({
      limit: 3,
@@ -29,35 +59,6 @@ app.get('/:id', (req,res)=>{
     });
   });
 });
-app.get('/new',(req, res)=> {
-    if(typeof req.user !== 'undefined'){
-      res.render('gallery/new', {
-        author:'',
-        title:'',
-        link:'',
-        description:''
-      });
-    }else{
-      res.redirect('/login');
-    }
-
-});
-app.post('/new', (req, res) => {
-  Picture.create(
-   {
-     author: req.body.author,
-     link: req.body.link,
-     description: req.body.description,
-     title: req.body.title
-   })
-  .then((picture) => {
-    res.render('gallery/new', {
-      pictures: picture
-
-    });
-  });
-});
-
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
   //if logged in cant go to edit
@@ -82,7 +83,7 @@ app.put('/:id/edit',(req,res)=> {
 app.delete('/:id/delete', (req, res) => {
   Picture.destroy({where: {id: req.params.id} })
   .then(() => {
-    res.redirect(`/gallery`);
+    res.redirect(`/`);
   });
 });
 module.exports= app;

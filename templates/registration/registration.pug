@@ -4,9 +4,12 @@ head
  meta(charset="UTF-8")
  title Login
 body
- form(method="POST" action="/registration")
-   input(type="text" name="username")
-   input(type="text" name="password")
-   button(type="submit") Register
-   //- already a user please login
- a(href="/logout") Login
+ form(method="POST" action="registration")
+  input(type="text" name="username")
+  input(type="text" name="password")
+  br
+  button(type="submit") Register
+ p Or Login
+ a(href="/login") Login
+
+

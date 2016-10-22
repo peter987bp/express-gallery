@@ -8,6 +8,7 @@ const registration = require('./routes/registration.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require ('express-session');
+const bcrypt = require('bcrypt');
 const CONFIG = require('./config/config.json');
 const db = require('./models');
 const Picture = db.Picture;
@@ -42,14 +43,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new LocalStrategy((username, password, done) =>{
-  User.findOne( { username: username})
+  User.findOne( {where: { username: username} })
   .then((user) =>{
-    const isAuthenticated = (username === user.dataValues.username && password === user.dataValues.password);
-    if(isAuthenticated){
-      return done(null, user);
-    }else{
-      return done(null, flase);
-    }
+    bcrypt.compare(password, user.password, (err, res)=>{
+      console.log('result: ', res);
+      const isAuthenticated = (username === user.dataValues.username && res === true);
+      if(isAuthenticated){
+        return done(null, user);
+      }else{
+        return done(null, false);
+      }
+    });
   })
   .catch((error)=>{
     return done('user not found', false);
@@ -74,7 +78,6 @@ app.use('/login', login);
 app.use('/registration', registration);
 
 app.get('/', function(req,res){
-  console.log('req.body: ', req.body);
   Picture.findAll({
     limit: 5
   })
@@ -90,7 +93,7 @@ app.get('/', function(req,res){
 });
 app.get('/logout', (req, res) =>{
   req.logout('/');
-  res.redirect('/login');
+  res.redirect('/');
 });
 app.listen(8080, function() {
   console.log('server started');
