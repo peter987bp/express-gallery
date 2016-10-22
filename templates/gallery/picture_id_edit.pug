@@ -5,21 +5,20 @@ block title
   title Photo-Gallery
 
 block body
-  - var isLoggedIn = true
-      div#gallery
-            li  title:' + #{pictures.title} + 'url: ' + #{pictures.link}
-            h3 First Pic
-            img(class='picture', src= pictures.link )
+  div#gallery
+    li  title:' + #{pictures.title} + 'url: ' + #{pictures.link}
+    h3 First Pic
+    img(class='picture', src= pictures.link )
   h3#header.headerClass Edit Pictures
   form(action=`/gallery/${pictures.id}/edit` method='POST' enctype="application/x-www-form-urlencoded")
     input(type="hidden" name="_method" value="PUT")
-    input(placeholder = 'edit author' name='author')
+    input(value = pictures.author name='author')
     ='\n'
-    input(placeholder = 'edit link' name='link')
+    input(value = pictures.link name='link')
     ='\n'
-    input(placeholder = 'edit description' name='description')
+    input(value = pictures.description name='description')
     ='\n'
-    input(placeholder = 'edit title' name='title')
+    input(value = pictures.title name='title')
     ='\n'
     input(type="hidden" name="oldtitle" value=`${pictures.title}`)
     br
