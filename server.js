@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const gallery = require('./routes/gallery.js');
 const login = require('./routes/login.js');
 const registration = require('./routes/registration.js');
+const router = require('./routes/router.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require ('express-session');
@@ -77,26 +78,11 @@ const isAuthenticated = (req, res, next) =>{
 app.use('/gallery', gallery);
 app.use('/login', login);
 app.use('/registration', registration);
+app.use('/', router);
 
-app.get('/', function(req,res){
-  Picture.findAll({
-    limit: 5
-  })
-  .then((pictures)=> {
-    let mainPicture = pictures.splice(0,1);
-    let sidePictures = pictures;
-    res.render('index', {
-      mainPicture: mainPicture[0].dataValues,
-      sidePictures: sidePictures
-    });
-  });
 
-});
-app.get('/logout', (req, res) =>{
-  req.logout('/');
-  res.redirect('/');
-});
 app.listen(8080, function() {
   console.log('server started');
   db.sequelize.sync();
 });
+module.exports= app;
