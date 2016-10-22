@@ -1,8 +1,8 @@
 mixin picturesList(pictures)
   each picture in pictures
     div.galleryPictureSet
-      a(href='gallery/' + picture.id)
-      img#gallerySidePicture( src= picture.link)
+      a(href= picture.id)
+        img#gallerySidePicture( src= picture.link)
       div.gallerySideGalleryInfo
         div#gallerySideTitle #{picture.title}
         div#gallerySideLink #{picture.link}

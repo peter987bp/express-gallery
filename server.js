@@ -28,9 +28,8 @@ app.use(methodOverride(function(req, res){
 app.set('view engine', 'pug');
 app.set('views', './templates');
 app.use(express.static('./public'));
-app.use(methodOverride('_method'));  // must before the route
+app.use(methodOverride('_method'));
 //---------------LOGIN-------------------
-//Attach expression session as middleware and initialize handshake
 app.use(session({
   store: new RedisStore(),
   secret: CONFIG.SECRET,
@@ -38,16 +37,8 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-// Attach passport as middle and initialize
 app.use(passport.initialize());
-//Our app uses persistant login sessions
-//so we need to tell express and passot to this use session midddleware
 app.use(passport.session());
-
-//LOGIN Use local strategy- this checks out DB in order to
-//LOGIN authenticate our users.
-//Data would but hookedup to a database in the real world.
-//hitting a databse to look for database
 
 passport.use(new LocalStrategy((username, password, done) =>{
   User.findOne( { username: username})
@@ -63,10 +54,7 @@ passport.use(new LocalStrategy((username, password, done) =>{
     return done('user not found', false);
   });
 }));
-//In order for persitant session to work - you must serialzie the user ot the request and then deserialize subsequent requests.
 passport.serializeUser((user,done) =>{
-  //user is passed in from local strategy
-  //user is attached to the req.user
   return done(null, user);
 });
 passport.deserializeUser((user,done) =>{
@@ -74,16 +62,13 @@ passport.deserializeUser((user,done) =>{
 });
 
 const isAuthenticated = (req, res, next) =>{
-  //if user is NOT authenticated
   if(!req.isAuthenticated()){
     return res.redirect('login');
   }
-  //if user is uathenticated - call next
   return next();
 };
 app.use('/gallery', gallery);
 app.use('/login', login);
-//routes for main page
 app.get('/', function(req,res){
   Picture.findAll({
     limit: 5
@@ -98,8 +83,8 @@ app.get('/', function(req,res){
   });
 });
 app.get('/logout', (req, res) =>{
-  req.logout('/'); //logs the user out - removes session form server and client
-  res.redirect('/login'); //redirect user to the login page
+  req.logout('/');
+  res.redirect('/login');
 });
 app.listen(8080, function() {
   console.log('server started');
