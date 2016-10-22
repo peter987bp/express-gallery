@@ -6,6 +6,21 @@ const nodemon     = require('gulp-nodemon');
 const browserSync = require('browser-sync');
 const reload      = browserSync.reload;
 const pkg         = require('./package.json');
+const childProcess = require('child_process');
+
+gulp.task('default', ['dev']);
+
+
+//Redis-Server
+gulp.task('redis-server', function() {
+  childProcess.exec('redis-server', function(err, stdout, stderr) {
+    console.log(stdout);
+    if (err !== null) {
+      console.log('exec error: ' + err);
+    }
+  });
+});
+
 
 gulp.task('nodemon', function (cb) {
 
@@ -47,4 +62,4 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*.*').on('change', reload);
 });
 
-gulp.task('default', ['watch', 'sass', 'browser-sync']);
+gulp.task('dev', ['watch','redis-server', 'browser-sync', 'sass']);
