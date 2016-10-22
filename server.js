@@ -49,6 +49,7 @@ passport.use(new LocalStrategy((username, password, done) =>{
       console.log('result: ', res);
       const isAuthenticated = (username === user.dataValues.username && res === true);
       if(isAuthenticated){
+        delete user.dataValues.password;
         return done(null, user);
       }else{
         return done(null, false);
