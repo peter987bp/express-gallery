@@ -1,32 +1,3 @@
-//LISTING PAGE
-.listingHeader{
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 75px;
-}
-
-.listingHeaderTitle{
-  display: inline-block;
-  font-size: 65px;
-  font-weight: bold;
-  font-family: 'IM Fell English', serif;
-  font-weight: bold;
-  width: 50%;
-
-  a{
-  color: grey;
-  }
-}
-
-
-
-.listingHeaderText{
-  display: inline-block;
-  width: 50%;
-}
 //UpperSet
 .listingMainBox{
   display: flex;

@@ -47,33 +47,7 @@ q:before, q:after {
   content: '';
   content: none; }
 
-/* line 2, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
-.listingHeader {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 75px; }
-
-/* line 11, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
-.listingHeaderTitle {
-  display: inline-block;
-  font-size: 65px;
-  font-weight: bold;
-  font-family: 'IM Fell English', serif;
-  font-weight: bold;
-  width: 50%; }
-  /* line 19, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
-  .listingHeaderTitle a {
-    color: grey; }
-
-/* line 26, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
-.listingHeaderText {
-  display: inline-block;
-  width: 50%; }
-
-/* line 31, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 3, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingMainBox {
   display: flex;
   flex-flow: row;
@@ -82,7 +56,7 @@ q:before, q:after {
   font-family: 'Raleway', sans-serif;
   font-size: 20px; }
 
-/* line 40, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 12, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .outerListingMainPhoto {
   display: flex;
   flex-flow: row;
@@ -91,28 +65,28 @@ q:before, q:after {
   height: 100%;
   background-color: teal; }
 
-/* line 48, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 20, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingMainPhoto {
   background-color: orange;
   display: inline-block;
   width: 80%; }
 
-/* line 53, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 25, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingMainPicture {
   display: inline-block;
   width: 100%;
   background-color: green; }
 
-/* line 58, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 30, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 #listingTitleName {
   margin-top: 15px;
   margin-bottom: 15px; }
 
-/* line 62, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 34, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingDescriptCopyright {
   margin-top: 25px; }
 
-/* line 66, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 38, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingSideGallery {
   width: 1200px;
   height: 100%;
@@ -121,7 +95,7 @@ q:before, q:after {
   justify-content: space-around;
   background-color: purple; }
 
-/* line 74, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 46, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingPictureSet {
   flex: 0 0 auto;
   width: 40%;
@@ -129,13 +103,13 @@ q:before, q:after {
   margin-left: 5px;
   margin-right: 5px; }
 
-/* line 81, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 53, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 #listingSidePicture {
   width: 50%;
   align: center;
   background-color: red; }
 
-/* line 87, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
+/* line 59, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_listing.scss */
 .listingSideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
@@ -231,7 +205,33 @@ input {
   height: 200px;
   resize: none; }
 
-/* line 5, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 2, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/header.scss */
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 75px; }
+
+/* line 11, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/header.scss */
+.headerTitle {
+  display: inline-block;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: 'IM Fell English', serif;
+  font-weight: bold;
+  width: 50%; }
+  /* line 19, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/header.scss */
+  .headerTitle a {
+    color: grey; }
+
+/* line 23, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/header.scss */
+.headerText {
+  display: inline-block;
+  width: 25%; }
+
+/* line 6, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
 body {
   background: #ffffff; }
 
