@@ -5,7 +5,7 @@ const Picture = db.Picture;
 
 //---GallerybyID
 app.get('/new',(req, res)=> {
-    console.log('req.body: ', req.body);
+    console.log('req.user: ', req.user);
     if(typeof req.user !== 'undefined'){
       res.render('gallery/new', {
         author:'',

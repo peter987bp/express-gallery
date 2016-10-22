@@ -1,11 +1,11 @@
-@import 'partials/_clear_fix';
-@import 'partials/_listing';
+@import 'partials/_css_reset';
+@import 'partials/_index';
 @import 'partials/_gallery';
 @import 'partials/_add';
+@import 'partials/_header';
 body {
   background: #ffffff;
 }
-
 a {
   text-decoration: none;
 }
