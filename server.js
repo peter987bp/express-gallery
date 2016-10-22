@@ -4,6 +4,7 @@ const bp =  require('body-parser');
 const methodOverride = require('method-override');
 const gallery = require('./routes/gallery.js');
 const login = require('./routes/login.js');
+const registration = require('./routes/registration.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require ('express-session');
@@ -67,9 +68,13 @@ const isAuthenticated = (req, res, next) =>{
   }
   return next();
 };
+
 app.use('/gallery', gallery);
 app.use('/login', login);
+app.use('/registration', registration);
+
 app.get('/', function(req,res){
+  console.log('req.body: ', req.body);
   Picture.findAll({
     limit: 5
   })
@@ -81,6 +86,7 @@ app.get('/', function(req,res){
       sidePictures: sidePictures
     });
   });
+
 });
 app.get('/logout', (req, res) =>{
   req.logout('/');

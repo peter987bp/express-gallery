@@ -3,10 +3,9 @@ const app = express.Router();
 const db = require('../models');
 const passport = require('passport');
 const USER = db.User;
-//---HOMEPAGE
 
 app.get('/', (req,res)=>{
-  res.render('login/index');
+  res.render('login/login');
 });
 
 app.post('/', passport.authenticate('local', {

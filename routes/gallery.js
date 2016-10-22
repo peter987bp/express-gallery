@@ -30,7 +30,6 @@ app.get('/:id', (req,res)=>{
   });
 });
 app.get('/new',(req, res)=> {
-  //if user is logged in they can delete
     if(typeof req.user !== 'undefined'){
       res.render('gallery/new', {
         author:'',
@@ -61,15 +60,19 @@ app.post('/new', (req, res) => {
 
 //-------BY ID/edit
 app.get('/:id/edit',(req,res) =>{
-  Picture.findById(req.params.id)
-    .then((pictures) => {
-    res.render('gallery/picture_id_edit', {
-      pictures: pictures
-    });
-  });
+  //if logged in cant go to edit
+  if(typeof req.user !== 'undefined'){
+    Picture.findById(req.params.id)
+      .then((pictures) => {
+        res.render('gallery/picture_id_edit', {
+        pictures: pictures
+        });
+      });
+    }else{
+      res.redirect('/login');
+    }
 });
 app.put('/:id/edit',(req,res)=> {
-  //Check if user belongs to the id being updated
   Picture.update({author: req.body.author, link:req.body.link, description: req.body.description, title: req.body.title},{where: { id: req.params.id}})
   .then((pictures)=>{
     res.redirect(`/gallery/${req.params.id}/edit`);
