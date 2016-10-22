@@ -7,7 +7,8 @@ const Picture = db.Picture;
 app.get('/:id', (req,res)=>{
   Picture.findAll({
      limit: 3,
-     order: [['createdAt', 'DESC']]
+     where:  {id: {$ne:req.params.id}},
+     order: [['createdAt', 'DESC']],
    })
   .then((sidePictures)=>{
     Picture.findById(req.params.id)

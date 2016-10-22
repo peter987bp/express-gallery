@@ -2,11 +2,9 @@ extends ../layout.pug
 include ./mixins.pug
 
 block title
-  title Photo-Gallery
+  title New Photo
 
 block body
-  - var isLoggedIn = true
-
     div#newBox
       form#newPicture(action='/gallery/new' method='post' name='picture')
         fieldset.fieldset

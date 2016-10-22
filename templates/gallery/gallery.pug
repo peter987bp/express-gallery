@@ -9,8 +9,7 @@ block body
     div.galleryMainPhoto
       div.galleryMarginMainPicture
         p#galleryTitleName #{mainPicture.title}
-        a(href='gallery/' + mainPicture.id)
-         img.galleryMainPicture( src= mainPicture.link )
+        img.galleryMainPicture( src= mainPicture.link )
       div.galleryDescriptCopyright
         p#galleryDescription Description: #{mainPicture.description}
         p copyright:  + #{mainPicture.link}
