@@ -1,6 +1,5 @@
-README
-
 Castles Gallery
+===============
 
 Castles Gallery is multi-user a picture gallery web application.
 Guest users can browse in all pictures uploaded by registered users.
