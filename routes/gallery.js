@@ -14,7 +14,7 @@ app.get('/new',(req, res)=> {
         description:''
       });
     }else{
-      res.redirect('/login');
+      res.redirect('/error/403');
     }
 
 });
@@ -70,7 +70,7 @@ app.get('/:id/edit',(req,res) =>{
         });
       });
     }else{
-      res.redirect('/login');
+      res.redirect('/error/403');
     }
 });
 app.put('/:id/edit',(req,res)=> {
