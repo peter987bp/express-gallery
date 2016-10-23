@@ -2,8 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-/* line 6, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_css_reset.scss */
+/* line 6, /Users/martakatona/Devleague/express-gallery/sass/partials/_css_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,31 +24,30 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-
-/* line 27, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_css_reset.scss */
+/* line 27, /Users/martakatona/Devleague/express-gallery/sass/partials/_css_reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-/* line 31, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_css_reset.scss */
+/* line 31, /Users/martakatona/Devleague/express-gallery/sass/partials/_css_reset.scss */
 body {
   line-height: 1; }
 
-/* line 34, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_css_reset.scss */
+/* line 34, /Users/martakatona/Devleague/express-gallery/sass/partials/_css_reset.scss */
 ol, ul {
   list-style: none; }
 
-/* line 37, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_css_reset.scss */
+/* line 37, /Users/martakatona/Devleague/express-gallery/sass/partials/_css_reset.scss */
 blockquote, q {
   quotes: none; }
 
-/* line 40, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_css_reset.scss */
+/* line 40, /Users/martakatona/Devleague/express-gallery/sass/partials/_css_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none; }
 
-/* line 2, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 2, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingMainBox {
   display: flex;
   flex-flow: row;
@@ -58,7 +56,7 @@ q:before, q:after {
   font-family: 'Raleway', sans-serif;
   font-size: 20px; }
 
-/* line 11, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 11, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .outerListingMainPhoto {
   display: flex;
   flex-flow: row;
@@ -67,29 +65,28 @@ q:before, q:after {
   height: 100%;
   background-color: teal; }
 
-
-/* line 19, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 19, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingMainPhoto {
   background-color: orange;
   display: inline-block;
   width: 80%; }
 
-/* line 24, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 24, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingMainPicture {
   display: inline-block;
   width: 100%;
   background-color: green; }
 
-/* line 29, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 29, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 #listingTitleName {
   margin-top: 15px;
   margin-bottom: 15px; }
 
-/* line 33, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 33, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingDescriptCopyright {
   margin-top: 25px; }
 
-/* line 37, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 37, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingSideGallery {
   width: 1200px;
   height: 100%;
@@ -98,7 +95,7 @@ q:before, q:after {
   justify-content: space-around;
   background-color: purple; }
 
-/* line 45, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 45, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingPictureSet {
   flex: 0 0 auto;
   width: 40%;
@@ -106,13 +103,13 @@ q:before, q:after {
   margin-left: 5px;
   margin-right: 5px; }
 
-/* line 52, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 52, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 #listingSidePicture {
   width: 50%;
   align: center;
   background-color: red; }
 
-/* line 58, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_index.scss */
+/* line 58, /Users/martakatona/Devleague/express-gallery/sass/partials/_index.scss */
 .listingSideGalleryInfo {
   margin-top: 15px;
   margin-bottom: 25px; }
@@ -208,7 +205,7 @@ input {
   height: 200px;
   resize: none; }
 
-/* line 2, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_header.scss */
+/* line 2, /Users/martakatona/Devleague/express-gallery/sass/partials/_header.scss */
 .header {
   display: flex;
   flex-flow: row wrap;
@@ -217,7 +214,7 @@ input {
   margin-bottom: 25px;
   margin-left: 75px; }
 
-/* line 11, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_header.scss */
+/* line 11, /Users/martakatona/Devleague/express-gallery/sass/partials/_header.scss */
 .headerTitle {
   display: inline-block;
   font-size: 65px;
@@ -225,16 +222,16 @@ input {
   font-family: 'IM Fell English', serif;
   font-weight: bold;
   width: 50%; }
-  /* line 19, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_header.scss */
+  /* line 19, /Users/martakatona/Devleague/express-gallery/sass/partials/_header.scss */
   .headerTitle a {
     color: grey; }
 
-/* line 23, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/partials/_header.scss */
+/* line 23, /Users/martakatona/Devleague/express-gallery/sass/partials/_header.scss */
 .headerText {
   display: inline-block;
   width: 25%; }
 
-/* line 6, /Users/BryanPeterson/Desktop/cohort13/express-gallery/sass/styles.scss */
+/* line 6, /Users/martakatona/Devleague/express-gallery/sass/styles.scss */
 body {
   background: #ffffff; }
 

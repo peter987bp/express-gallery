@@ -7,7 +7,7 @@ app.get('/', (req,res)=>{
   res.render('login/login');
 });
 app.post('/', passport.authenticate('local', {
-  successRedirect: './',
+  successRedirect: '/',
   failureRedirect: '/registration',
 }));
 

@@ -49,7 +49,7 @@ app.get('/:id', (req,res)=>{
           isLoggedIn = true;
         }
       }
-      console.log('sidePictures: ', sidePictures);
+      //console.log('sidePictures: ', sidePictures);
       console.log('isLoggedIn: ', isLoggedIn);
       res.render('gallery/gallery', {
         mainPicture: mainPicture,
