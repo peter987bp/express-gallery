@@ -5,7 +5,7 @@ block title
   title Photo-Gallery
 
 block body
-  div.lisitngMainBox
+  div.mainBox
     div.outerListingMainPhoto
       div.listingMainPhoto
         div.listingMarginMainPicture
@@ -16,4 +16,4 @@ block body
           p#listingDescription Description: #{mainPicture.description}
           p copyright:  + #{mainPicture.link}
     div.listingSideGallery
-       +picturesList(sidePictures)
+      +picturesList(sidePictures)

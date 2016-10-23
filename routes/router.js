@@ -22,4 +22,8 @@ app.get('/logout', (req, res) =>{
   res.redirect('/');
 });
 
+app.get('/*', (req, res) =>{
+  res.redirect('/error/404');
+});
+
 module.exports= app;
