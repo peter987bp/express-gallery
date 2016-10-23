@@ -26,7 +26,7 @@ describe('Home route', function(){
   it('GET/* home page', (done) =>{
     request(Server)
       .get('/*')
-      .expect(404)
+      .expect(302)
       .end(function(err, res) {
         //console.log('RES STATUS', res.status);
         if (err) {
