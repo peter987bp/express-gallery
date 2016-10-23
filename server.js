@@ -67,7 +67,7 @@ passport.use(new LocalStrategy((username, password, done) =>{
         return bcrypt.compare(password, user.password, (err, matchingPasswords) => {
           console.log('result: ', matchingPasswords);
 
-          // const isAuthenticated = (username === user.dataValues.username && res === true);
+          const isAuthenticated = (username === user.dataValues.username && res === true);
 
           if(matchingPasswords){
             delete user.dataValues.password;
