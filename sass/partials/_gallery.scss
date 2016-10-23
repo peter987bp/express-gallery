@@ -1,25 +1,3 @@
-.galleryHeader{
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 75px;
-}
-.galleryHeaderTitle{
-  display: inline-block;
-  font-size: 65px;
-  font-weight: bold;
-  font-family: 'IM Fell English', serif;
-  font-weight: bold;
-  color: grey;
-  width: 50%;
-
-}
-.galleryHeaderText{
-  display: inline-block;
-  width: 50%;
-}
 .galleryMainBox{
   display: flex;
   flex-flow:row;

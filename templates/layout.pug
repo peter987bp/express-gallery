@@ -8,18 +8,17 @@ html(lang="en")
     link(href="https://fonts.googleapis.com/css?family=IM+Fell+English:400i|Raleway" rel="stylesheet")
     block title
   body
-    div.bigBoxContainer
-      div.header
-        div.headerTitle
-          a(href='/') _ARCHITEKT
-        div.headerText Sample text
-        div.loginFunction
-          a(href='/login')
-            button(type="submit") Login
-          form(method="GET" action="/logout")
-            button(type="submit") Logout
-          a(href='/registration')
-            button(type='submit') Register
-      block body
+    div.header
+      div.headerTitle
+        a(href='/') _ARCHITEKT
+      div.headerText Sample text
+      div.loginFunction
+        a(href='/login')
+          button(type="submit") Login
+        form(method="GET" action="/logout")
+          button(type="submit") Logout
+        a(href='/registration')
+          button(type='submit') Register
+    block body
 
-      footer This is the footer
+    footer This is the footer
