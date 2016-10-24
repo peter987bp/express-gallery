@@ -4,7 +4,6 @@ head
  meta(charset="UTF-8")
  title Login
 body
-  //- if first time through the page
   form(method="POST" action="/login")
     input(type="text" name="username")
     input(type="text" name="password")
@@ -12,4 +11,7 @@ body
   a(href="/logout") Logout
   br
   a(href="/registration") Registration
+  //- if errorMessage == true
+
+  p hhh #{flashMessage}
 

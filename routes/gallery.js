@@ -45,11 +45,10 @@ app.get('/:id', (req,res)=>{
     .then((mainPicture)=> {
       let isLoggedIn = false;
       if(typeof req.user !== 'undefined'){
-        if(req.user.id === mainPicture.userID){
+        if(req.user.id === mainPicture.userID || req.user.user_role === 'admin'){
           isLoggedIn = true;
         }
       }
-      //console.log('sidePictures: ', sidePictures);
       console.log('isLoggedIn: ', isLoggedIn);
       res.render('gallery/gallery', {
         mainPicture: mainPicture,

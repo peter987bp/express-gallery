@@ -57,6 +57,33 @@ describe('Home route', function(){
     ;
   });  //eof it
 
+
+  it('PUT/gallery/id/edit', (done) =>{
+    let editAuthor = 'Mamma+Mia';
+    let editTitle = 'cute';
+      request(Server)
+        .put('/gallery/1/edit')
+        .set('Content-Type', 'application/x-www-form-urlencoded')
+        .send(`author=Mamma+Mia&link=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2Foriginals%2Fe3%2Ffa%2F1e%2Fe3fa1eed9395e0ad991d36fb41e0bda5.jpg&description=look+how+happy+he+is&title=cute`)
+        .expect('location', '/gallery/1/edit')
+        .expect(302);
+      request(Server)
+        .get('/gallery/1')
+        .expect(200)
+        .end(function(err, res) {
+          if (err) {
+            return done(err);
+          }
+          let htmlBody = res.text;
+          //console.log('RESPONSE GET back header ', res.header);
+          //console.log('RESPONSE GET back res.text', res.text);
+          Dom.env(res.text, (err, window)=>{
+            let findElement = window.document.querySelectorAll('.galleryMarginMainPicture');
+            Expect(window.document.querySelector('#galleryTitleName').innerHTML).to.be.equal(editTitle);
+            done();
+          })// eof jsdom.env
+      }); //eof nested request
+    });  //eof it
   it('GET/login', (done) =>{
     request(Server)
       .get('/login')
@@ -105,33 +132,6 @@ describe('Home route', function(){
           }
         })
       ;
-    });  //eof it
-
-  it('PUT/gallery/id/edit', (done) =>{
-    let editAuthor = 'Mamma+Mia';
-    let editTitle = 'lovely';
-      request(Server)
-        .put('/gallery/1/edit')
-        .set('Content-Type', 'application/x-www-form-urlencoded')
-        .send(`author=${editAuthor}&link=http%3A%2F%2Fwww.chateau-amboise.com%2FoktThemes%2Fp-c094-01%2Fimages%2Fchateau_amboise_accueil.jpg&description=look+how+happy+he+is&title=lovely`)
-        .expect('location', '/gallery/1/edit')
-        .expect(302);
-      request(Server)
-        .get('/gallery/1')
-        .expect(200)
-        .end(function(err, res) {
-          if (err) {
-            return done(err);
-          }
-          let htmlBody = res.text;
-          //console.log('RESPONSE GET back header ', res.header);
-          //console.log('RESPONSE GET back res.text', res.text);
-          Dom.env(res.text, (err, window)=>{
-            let findElement = window.document.querySelectorAll('.galleryMarginMainPicture');
-            Expect(window.document.querySelector('#galleryTitleName').innerHTML).to.be.equal(editTitle);
-            done();
-          })// eof jsdom.env
-      }); //eof nested request
     });  //eof it
 
 });

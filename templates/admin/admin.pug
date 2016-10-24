@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+html(lang="en")
+head
+ meta(charset="UTF-8")
+ title Admin
+body
+  p hello world
+  //- list all picturs and user and be able to delete any picture or user
+  h3#header.headerClass Edit Pictures
+    form(action=`/gallery/${pictures.id}/edit` method='POST' enctype="application/x-www-form-urlencoded")
+      input(type="hidden" name="_method" value="PUT")
+      input(value = pictures.author name='author')
+      ='\n'
+      input(value = pictures.link name='link')
+      ='\n'
+      input(value = pictures.description name='description')
+      ='\n'
+      input(value = pictures.title name='title')
+      ='\n'
+      input(type="hidden" name="oldtitle" value=`${pictures.title}`)
+      br
+      button(type='submit' name='put' value='submit') Edit Article
+      br
+  //- Have pictures show up by user once selected
+  //- h3#header.headerClass Edit Pictures
+  //-   form(action=`/gallery/${pictures.id}/edit` method='POST' enctype="application/x-www-form-urlencoded")
+  //-     input(type="hidden" name="_method" value="PUT")
+  //-     input(value = pictures.author name='author')
+  //-     ='\n'
+  //-     input(value = pictures.link name='link')
+  //-     ='\n'
+  //-     input(value = pictures.description name='description')
+  //-     ='\n'
+  //-     input(value = pictures.title name='title')
+  //-     ='\n'
+  //-     input(type="hidden" name="oldtitle" value=`${pictures.title}`)
+  //-     br
+  //-     button(type='submit' name='put' value='submit') Edit Article
+  //-     br

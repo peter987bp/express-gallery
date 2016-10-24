@@ -1,0 +1,8 @@
+mixin picturesList(pictures)
+  each picture in pictures
+    div.userProfileMain
+      a(href='gallery/' + picture.id)
+       img#userProfilePicture( src= picture.link)
+      div.userProfileGalleryInfo
+        div#userProfileTitle #{picture.title}
+        div#userProfileLink #{picture.link}

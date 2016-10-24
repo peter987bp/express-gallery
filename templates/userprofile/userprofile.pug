@@ -1,0 +1,10 @@
+extends ../layout
+include ./mixins
+
+block title
+  title Photo-Gallery
+
+block body
+  div.mainBox
+    div.userPhotos
+      +picturesList(sidePictures)

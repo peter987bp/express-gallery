@@ -1,0 +1,15 @@
+.mainBox{
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.userPhotos{
+  background-color: red;
+  //This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto
+  flex:0, 0, auto;
+  display: flex;
+  flex-flow: row wrap;
+  // justify-content: wrap;
+
+}

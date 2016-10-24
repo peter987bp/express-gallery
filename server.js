@@ -5,8 +5,10 @@ const methodOverride = require('method-override');
 const gallery = require('./routes/gallery.js');
 const login = require('./routes/login.js');
 const registration = require('./routes/registration.js');
+const userprofile = require('./routes/userprofile.js');
 const router = require('./routes/router.js');
 const errorPages = require('./routes/error.js');
+const admin = require('./routes/admin.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require ('express-session');
@@ -52,32 +54,25 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser((user,done) =>{
-  return done(null, user);
-});
-passport.deserializeUser((user,done) =>{
-  return done(null, user);
-});
-
 passport.use(new LocalStrategy((username, password, done) =>{
   User.findOne( { where: { username: username } })
     .then((user) =>{
 
       if (user !== null) {
-        return bcrypt.compare(password, user.password, (err, matchingPasswords) => {
+        bcrypt.compare(password, user.password, (err, matchingPasswords) => {
           console.log('result: ', matchingPasswords);
-
-          const isAuthenticated = (username === user.dataValues.username && res === true);
+          console.log('user.password: ', user.password);
+          const isAuthenticated = (username === user.dataValues.username && matchingPasswords === true);
 
           if(matchingPasswords){
             delete user.dataValues.password;
-            return done('null', user);
+            return done(null, user, {message: "username or password not found"});
           } else {
-            return done('password didnt match', false);
+            return done(null, false, {message: "username or password not found"});
           }
         });
       } else {
-        return done('null', false);
+        return done(null, false, {message: "username or password not found"});
       }
     })
     .catch((error)=>{
@@ -88,6 +83,13 @@ passport.use(new LocalStrategy((username, password, done) =>{
     });
 }));
 
+passport.serializeUser((user,done) =>{
+  return done(null, user);
+});
+passport.deserializeUser((user,done) =>{
+  return done(null, user);
+});
+
 const isAuthenticated = (req, res, next) =>{
   if(!req.isAuthenticated()){
     return res.redirect('/login');
@@ -95,17 +97,19 @@ const isAuthenticated = (req, res, next) =>{
   return next();
 };
 
-app.post('/', passport.authenticate('local', {
-  successRedirect: '/gallery',
+app.use('/gallery', gallery);
+app.use('/login', login);
+app.use('/registration', registration);
+app.use('/error', errorPages);
+app.use('/userprofile', userprofile);
+app.use('/admin', admin);
+app.use('/', router);
+
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
   failureRedirect: '/login',
   failureFlash: true
 }));
-
-app.use('/gallery', gallery);
-app.use('/login', login);
-app.use('/registration', registration); app.use('/error', errorPages);
-app.use('/', router);
-
 
 app.listen(8080, function() {
   console.log('server started');
